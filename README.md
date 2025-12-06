@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# 📚 Application de Gestion de Librairie — React (Create React App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet a pour objectif de développer une application web de gestion de librairie en **React**.  
+L’application permet de gérer les livres, les utilisateurs, ainsi que les emprunts et retours, tout en offrant une interface intuitive et réactive.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Fonctionnalités principales
 
-### `npm start`
+### 🔵 1. Gestion des livres (CRUD)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Ajouter un livre
+- Modifier les informations d’un livre
+- Supprimer un livre
+- Afficher la liste des livres
+- Visualiser les détails d’un livre
+- Persistance des données dans un **fichier JSON**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### 🔍 2. Recherche et filtrage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Recherche par **titre**, **auteur**, ou **ISBN**
+- Filtrage par **catégorie**, **disponibilité**, **prix**, etc.
+- Intégration d’une **API publique** (Google Books, OpenLibrary…) pour enrichir les informations des livres
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔄 3. Gestion des emprunts et retours
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Enregistrer un emprunt de livre
+- Mettre à jour la disponibilité / stock
+- Enregistrer un retour
+- Historique des emprunts par utilisateur
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 👤 4. Gestion des utilisateurs
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Authentification simple (connexion / inscription)
+- Possibilité de rôles (utilisateur ou administrateur)
+- Gestion basique du profil
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📊 5. Dashboard personnalisé
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Statistiques globales :
+  - Nombre total de livres
+  - Livres disponibles vs empruntés
+  - Emprunts en cours
+- Indicateurs visuels et sections de résumé
+- Accès rapide vers les actions principales

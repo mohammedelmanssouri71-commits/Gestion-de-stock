@@ -1,4 +1,4 @@
-# 📚 Application de Gestion de Librairie — React (Create React App)
+# 📚 Application de Gestion de Librairie
 
 Ce projet a pour objectif de développer une application web de gestion de librairie en **React**.  
 L’application permet de gérer les livres, les utilisateurs, ainsi que les emprunts et retours, tout en offrant une interface intuitive et réactive.

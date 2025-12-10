@@ -1,0 +1,73 @@
+import { useState, useEffect, useContext } from "react"
+import { BooksContext } from "./Books";
+import Alert from "./Alert";
+import './AddBook.css';
+export default function AddBook(){
+    const [query, setQuery] = useState("");
+    const [books, setBooks] = useState([]);
+    const [alert, setAlert] = useState(false);
+    const {livres, setLivres} = useContext(BooksContext);
+    useEffect(() => {
+        fetch(`https://openlibrary.org/search.json?q=${query}`)
+            .then(res => res.json())
+            .then(data => setBooks(data.docs));
+        }, [query]);
+    useEffect(() => {
+        setTimeout(() => {
+            setAlert(false);
+        },3000)
+    }, [alert])
+    function handleAddBook(book) {
+    const library_books = JSON.parse(localStorage.getItem("books")) || [];
+    const livre = {
+        id: book.key?.replace("/works/", "") || crypto.randomUUID(),
+        image: book.cover_i
+            ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+            : "https://shop.btpubservices.com/Content/images/cover_not_available_720.jpg",
+
+        title: book.title || "Untitled",
+        author: book.author_name?.[0] || "Unknown",
+        category: book.subject?.[0] || "Uncategorized",
+        isbn: book.isbn?.[0] || "N/A",
+        year: book.first_publish_year || "Unknown",
+        desc: "",
+        total_number_of_copies: 0,
+        number_of_available_copies: 0
+    }
+    if (library_books.find(b => b.id == livre.id)) {
+        setAlert(true);
+    }else{
+        library_books.push(livre);
+        setLivres(library_books);
+        localStorage.setItem("books", JSON.stringify(library_books));
+    }
+}
+
+    return (
+        <div>
+            {alert?<Alert/>:<div></div>}
+            <form className="search-bar">
+                <label>Search books on Open Library</label><br/>
+                <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by title"/>
+            </form>
+            <div className="results">
+                <h3>Results:</h3>
+                <div className="added-books">
+                    {books && books.map(b => {
+                        return (
+                            <div key={b.key} className="added-book">
+                            <img 
+                            src={b.cover_i?`https://covers.openlibrary.org/b/id/${b.cover_i}-M.jpg`:"https://shop.btpubservices.com/Content/images/cover_not_available_720.jpg"} alt="cover" />
+                            <div>
+                                <h3>{b.title}</h3>
+                                <p>{b.author_name?.[0]}</p>
+                            </div>
+                            <button onClick={() => handleAddBook(b)}><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        )
+                    })}
+                </div>
+            </div>
+        </div>
+    )
+}

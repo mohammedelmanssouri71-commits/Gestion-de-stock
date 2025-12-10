@@ -7,7 +7,7 @@ export default function Navbar(){
             <h1>My Library</h1>
             <div>
                 <Link to="/books" className="link">Books</Link>
-                <Link to="/about" className="link">About</Link>
+                <Link to="/add-book" className="link">Add Book</Link>
                 <Link to="/contact" className="link">Contact</Link>
             </div>
         </nav>

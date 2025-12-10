@@ -7,6 +7,12 @@ body{
   font-family: "Momo Trust Sans", sans-serif;
   background-color: rgb(253,253,253);
 }
+button{
+  cursor: pointer;
+}
+button, input, textarea{
+  font-family: "Momo Trust Sans", sans-serif;
+}
 .book{
   text-decoration: none;
   color: black;
@@ -21,10 +27,15 @@ body{
 }
 .books td i{
   font-size: 20px;
-  margin-left: 5px;
 }
 .book img{
   width: 50px;
+}
+.book button{
+  border: 0;
+  background-color: transparent;
+  display: inline-block;
+  margin-left: 5px;
 }
 .books{
   width: 70vw;
@@ -77,4 +88,36 @@ body{
   background-color: white;
   color: black;
   border: 1px solid rgb(216, 216, 216);
+}
+.edit-form{
+  display: flex;
+  width: fit-content;
+  margin: 20px auto;
+  align-items: center;
+  /* justify-content: center; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+.edit-form > div:first-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.edit-form > div:first-child img{
+  display: block;
+  width: 150px;
+  /* margin: 0 auto; */
+
+}
+.edit-form > div:last-child input, .edit-form > div:last-child textarea{
+  padding: 5px 10px;
+    outline: 0;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5px;
+    width: 300px;
+    margin: 10px 0;
 }

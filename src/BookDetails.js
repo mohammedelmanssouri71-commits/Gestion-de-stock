@@ -1,25 +1,11 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { books} from "./Books";
+import { BooksContext } from "./Books";
 
 export default function BookDetails(){
     let {id} = useParams();
-    let booksList = useContext(books);
-    let book = booksList.find(b => b.id == id);
-    const styleAv = {
-        padding : "5px",
-        borderRadius: "20px",
-        color : "green",
-        backgroundColor: "rgb(147, 234, 173)",
-        marginLeft: "10px"
-    };
-    const styleBr = {
-        padding: "5px",
-        borderRadius: "20px",
-        color: "red",
-        backgroundColor : "pink",
-        marginLeft: "10px"
-    }
+    let {livres, setLivres} = useContext(BooksContext);
+    let book = livres.find(b => b.id == id);
     return (
         <div style={{width: "70vw", margin: "20px auto"}}>
             <h2>Books Details</h2>
@@ -31,9 +17,11 @@ export default function BookDetails(){
                     <div className="infos">
                         <div><span>Category:</span> {book.category}</div>
                         <div><span>ISBN:</span> {book.isbn}</div>
-                        <div><span>Availability:</span> 
-                        <span style={book.availability?styleAv:styleBr}>{book.availability?"Available": "Borrowed"}</span></div>
                     </div>
+                    <div>
+                        <p>Number of copies: {book.total_number_of_copies}</p>
+                        <p>Number of available copies: {book.number_of_available_copies}</p>
+                    </div> 
                     <div>
                         <h3>Description</h3>
                         <p>{book.desc}</p>

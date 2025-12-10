@@ -1,10 +1,10 @@
-import { books } from "./Books";
+import { BooksContext } from "./Books";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 export default function BooksList(){
-    const booksList = useContext(books);
-    const liste = booksList.map(book => {
+    const {livres, setLivres} = useContext(BooksContext);
+    const liste = livres.map(book => {
         return (
             <tr key={book.id} className="book">
                 <td>
@@ -17,18 +17,21 @@ export default function BooksList(){
                 <td>{book.author}</td>
                 <td>{book.category}</td>
 
-                <td style={!book.availability ? {color: 'red'} : {color: 'green'}}>
-                    {book.availability ? "Available" : "Borrowed"}
-                </td>
-
                 <td>
-                    <i className="fa-regular fa-pen-to-square"></i>
-                    <i className="fa-regular fa-trash-can"></i>
+                    <button><Link to={`edit-book/${book.id}`}><i className="fa-regular fa-pen-to-square"></i></Link></button>
+                    <button onClick={() => handleDeleteBook(book.id)}><i className="fa-regular fa-trash-can"></i></button>
                 </td>
             </tr>
 
         )
     })
+    function handleDeleteBook(bookId){
+        if (window.confirm("Do you want to delete this book?")){
+            const newList = livres.filter(b => b.id != bookId);
+            setLivres(newList);
+            localStorage.setItem("books", JSON.stringify(newList));
+        }
+    }
     return (
         <table className="books">
             <tr>
@@ -36,7 +39,6 @@ export default function BooksList(){
                 <th>Title</th>
                 <th>Author</th>
                 <th>Category</th>
-                <th>Status</th>
                 <th>Actions</th>
             </tr>
             {liste}

@@ -1,23 +1,39 @@
 
 
-export default function Alert(){
-    const styleAlert = {
-        backgroundColor: "rgba(255,0,0,0.1)",        
-        color: "red",                  
+export default function Alert({type, message}){
+    const styleAlert = {                  
         padding: "14px 18px",
         borderRadius: "10px",
         border: "1px solid #e4e4e7",    
         fontSize: "0.95rem",
         lineHeight: "1.4",
-        margin: "12px auto",
+        // margin: "12px auto",
         boxShadow: "0 1px 2px rgba(0,0,0,0.08)", 
-        width: "fit-content"
-};
-
+        width: "fit-content",
+        fontWeight: "200",
+        position: "absolute",
+        top: "40px",
+        left: "calc(50vw + 125px)",
+        transform: "translateX(-50%)"
+    };
+    switch (type) {
+        case "error":
+            styleAlert.backgroundColor = "rgba(255,0,0,0.1)";
+            styleAlert.color = "red";
+            break;
+        case "success":
+            styleAlert.backgroundColor = "rgba(0,255,0,0.1)";
+            styleAlert.color = "green";
+            break;
+        default:
+            styleAlert.backgroundColor = "rgba(0,0,255,0.1)";
+            styleAlert.color = "blue";
+            break;
+    }
 
     return (
         <div style={styleAlert}>
-            <p>Whoops — this book is already in your collection</p>
+            <p>{message}</p>
         </div>
     )
 }

@@ -7,6 +7,9 @@ body{
   font-family: "Momo Trust Sans", sans-serif;
   background-color: rgb(253,253,253);
 }
+.main-content{
+  margin-left: 250px;
+}
 button{
   cursor: pointer;
 }
@@ -18,11 +21,11 @@ button, input, textarea{
   color: black;
   padding: 10px;
 }
-.books th{
+.books th, .users th{
   color: grey;
   padding: 10px;
 }
-.books td{
+.books td, .users td{
   padding: 10px;
 }
 .books td i{
@@ -31,16 +34,42 @@ button, input, textarea{
 .book img{
   width: 50px;
 }
+.users img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.users tr > td:first-child{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .book button{
   border: 0;
   background-color: transparent;
   display: inline-block;
   margin-left: 5px;
 }
-.books{
+.books, .users, .user-manage{
   width: 70vw;
   margin: 20px auto;
   font-weight: 200;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  border-radius: 5px;
+}
+.user-manage{
+  padding: 30px 20px;
+}
+.user-manage input{
+  padding: 5px 10px;
+  outline: 0;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5px;
+    width: 300px;
+    margin: 10px 0;
 }
 .book-details{
   display: flex;
@@ -120,4 +149,36 @@ button, input, textarea{
     border-radius: 5px;
     width: 300px;
     margin: 10px 0;
+}
+.side-bar{
+  padding: 0 20px;
+  height: 70px;
+  line-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  background-color: white;
+}
+.side-bar img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.side-bar input{
+  padding: 5px 10px;
+  outline: 0;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px 0;
+}
+.side-bar button{
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
 }

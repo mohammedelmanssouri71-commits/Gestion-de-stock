@@ -6,6 +6,8 @@ export default function AddBook(){
     const [query, setQuery] = useState("");
     const [books, setBooks] = useState([]);
     const [alert, setAlert] = useState(false);
+    const [typeAlert, setType] = useState("");
+    const [message, setMessage] = useState("");
     const {livres, setLivres} = useContext(BooksContext);
     useEffect(() => {
         fetch(`https://openlibrary.org/search.json?q=${query}`)
@@ -15,7 +17,7 @@ export default function AddBook(){
     useEffect(() => {
         setTimeout(() => {
             setAlert(false);
-        },3000)
+        },3500)
     }, [alert])
     function handleAddBook(book) {
     const library_books = JSON.parse(localStorage.getItem("books")) || [];
@@ -34,9 +36,13 @@ export default function AddBook(){
         total_number_of_copies: 0,
         number_of_available_copies: 0
     }
+    setAlert(true);
     if (library_books.find(b => b.id == livre.id)) {
-        setAlert(true);
+        setType("error");
+        setMessage(`Whoops — the book "${livre.title}" is already in your collection`);
     }else{
+        setType("success");
+        setMessage(`The book "${livre.title}" is added successfully`);
         library_books.push(livre);
         setLivres(library_books);
         localStorage.setItem("books", JSON.stringify(library_books));
@@ -45,7 +51,7 @@ export default function AddBook(){
 
     return (
         <div>
-            {alert?<Alert/>:<div></div>}
+            {alert?<Alert type={typeAlert} message={message}/>:<div></div>}
             <form className="search-bar">
                 <label>Search books on Open Library</label><br/>
                 <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by title"/>

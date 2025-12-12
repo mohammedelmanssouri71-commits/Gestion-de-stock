@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BooksContext } from "./Books";
 
 export default function BookDetails(){
@@ -26,8 +26,7 @@ export default function BookDetails(){
                         <h3>Description</h3>
                         <p>{book.desc}</p>
                     </div>
-                    <button className="borrowBtn">Borrow Book</button>
-                    <button className="returnBtn">Return Book</button>
+                    <button className="borrowBtn"><Link to="borrow-book" style={{textDecoration: "none", color: "white"}}>Borrow Book</Link></button>
                 </div>
             </div>
         </div>

@@ -2,8 +2,9 @@ import { useState, useEffect, useContext } from "react"
 import { BooksContext } from "./Books";
 import Alert from "./Alert";
 import './AddBook.css';
+import logo from './assets/open-library-logo.jpg';
 export default function AddBook(){
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("Politics");
     const [books, setBooks] = useState([]);
     const [alert, setAlert] = useState(false);
     const [typeAlert, setType] = useState("");
@@ -53,8 +54,14 @@ export default function AddBook(){
         <div>
             {alert?<Alert type={typeAlert} message={message}/>:<div></div>}
             <form className="search-bar">
-                <label>Search books on Open Library</label><br/>
-                <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by title"/>
+                <div>
+                    <h3>Search books on Open Library</h3>
+                    <p>You can find more than 1000 books in <b>Open Library</b></p>
+                    <input type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search by title"/>
+                </div>
+                <div>
+                    <img src={logo} alt="open-library-logo"/>
+                </div>
             </form>
             <div className="results">
                 <h3>Results:</h3>

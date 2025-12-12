@@ -7,11 +7,10 @@ export default function Alert({type, message}){
         border: "1px solid #e4e4e7",    
         fontSize: "0.95rem",
         lineHeight: "1.4",
-        // margin: "12px auto",
         boxShadow: "0 1px 2px rgba(0,0,0,0.08)", 
         width: "fit-content",
         fontWeight: "200",
-        position: "absolute",
+        position: "fixed",
         top: "40px",
         left: "calc(50vw + 125px)",
         transform: "translateX(-50%)"

@@ -21,15 +21,22 @@ button, input, textarea{
   color: black;
   padding: 10px;
 }
-.books th, .users th{
+.books th, .users th, .borrowing-returns table th{
   color: grey;
   padding: 10px;
 }
-.books td, .users td{
+.books td, .users td, .borrowing-returns table td{
   padding: 10px;
+  text-align: center;
 }
 .books td i{
   font-size: 20px;
+}
+.books td button:first-child i{
+  color: green;
+}
+.books td button:last-child i{
+  color: red;
 }
 .book img{
   width: 50px;
@@ -66,10 +73,10 @@ button, input, textarea{
 .user-manage input{
   padding: 5px 10px;
   outline: 0;
-    border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
-    width: 300px;
-    margin: 10px 0;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px 0;
 }
 .book-details{
   display: flex;
@@ -100,25 +107,23 @@ button, input, textarea{
 .book-details .infos span{
   color: gray;
 }
-.book-details img{
+.book-details img, .borrow-form img{
   width: 200px;
 }
-.book-details button{
+.borrowBtn, .returnBtn{
+  background-color: rgb(13,131,242);
+  color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   margin: 15px 5px;
 }
-.book-details .borrowBtn{
-  background-color: rgb(13,131,242);
-  color: white;
-}
-.book-details .returnBtn{
+.returnBtn{
   background-color: white;
   color: black;
-  border: 1px solid rgb(216, 216, 216);
+  border: 1px solid rgb(182, 182, 182);
 }
-.edit-form{
+.edit-form, .borrow-form, .form-add-user{
   display: flex;
   width: fit-content;
   margin: 20px auto;
@@ -128,6 +133,27 @@ button, input, textarea{
   background-color: white;
   padding: 20px;
   border-radius: 5px;
+}
+.form-add-user{
+  display: block;
+  position: absolute;
+  right: 100px;
+}
+.form-add-user .user-icon{
+  font-size: 30px;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  margin: 15px auto;
+}
+.form-add-user h3{
+  text-align: center;
+}
+.borrow-form{
+  gap: 100px;
 }
 .edit-form > div:first-child{
   display: flex;
@@ -142,7 +168,7 @@ button, input, textarea{
   /* margin: 0 auto; */
 
 }
-.edit-form > div:last-child input, .edit-form > div:last-child textarea{
+.edit-form > div:last-child input, .edit-form > div:last-child textarea, .borrow-form input, .borrow-form select, .form-add-user input{
   padding: 5px 10px;
     outline: 0;
     border: 1px solid rgb(207, 207, 207);
@@ -181,4 +207,44 @@ button, input, textarea{
   background-color: transparent;
   border: 0;
   font-size: 20px;
+}
+.borrowing-status{
+  border-radius: 20px;
+  padding: 10px;
+  width: fit-content;
+  margin: 0 auto;
+}
+.cancel-icon{
+  background-color: transparent;
+  border: 0;
+  font-size: 30px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.borrowing-returns{
+  width: 70vw;
+  margin: 20px auto;
+}
+.borrowing-returns > div, .borrowing-returns table{
+  width: 100%;
+  margin: 20px auto;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  background-color: white;
+  border-radius: 5px;
+}
+.borrowing-returns > div{
+  line-height: 50px;
+  padding: 20px;
+}
+.borrowing-returns > div p{
+  color: rgb(185, 185, 185);
+}
+.borrowing-returns > div input{
+  padding: 5px 10px;
+  outline: 0;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px 0;
 }

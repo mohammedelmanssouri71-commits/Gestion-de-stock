@@ -33,7 +33,7 @@ export default function Users(){
         }
         return (
             <tr key={u.id}>
-                <td><img src={profil} alt="profil"/>{u.name}</td>
+                <td>{u.name}</td>
                 <td>{u.email}</td>
                 <td>{u.borrowing.length}</td>
                 <td><p style={styleStatus} className="borrowing-status">{status}</p></td>

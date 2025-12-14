@@ -1,0 +1,13 @@
+.not-found img{
+    width: 200px;
+}
+.not-found{
+    text-align: center;
+    padding: 20px;
+}
+.not-found span{
+    color: orange;
+}
+.not-found p{
+    color: rgb(184, 184, 184);
+}

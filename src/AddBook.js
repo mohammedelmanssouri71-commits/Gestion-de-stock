@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react"
 import { BooksContext } from "./Books";
 import Alert from "./Alert";
+import NotFound from "./NotFound";
 import './AddBook.css';
 import logo from './assets/open-library-logo.jpg';
 export default function AddBook(){
@@ -64,13 +65,12 @@ export default function AddBook(){
                 </div>
             </form>
             <div className="results">
-                <h3>Results:</h3>
                 <div className="added-books">
-                    {books && books.map(b => {
+                    {books? books.map(b => {
                         return (
                             <div key={b.key} className="added-book">
                             <img 
-                            src={b.cover_i?`https://covers.openlibrary.org/b/id/${b.cover_i}-M.jpg`:"https://shop.btpubservices.com/Content/images/cover_not_available_720.jpg"} alt="cover" />
+                            src={b.cover_i?`https://covers.openlibrary.org/b/id/${b.cover_i}-M.jpg`:"https://shop.btpubservices.com/Content/images/cover_not_available_720.jpg"} alt="cover" loading="lazy"/>
                             <div>
                                 <h3>{b.title}</h3>
                                 <p>{b.author_name?.[0]}</p>
@@ -78,7 +78,7 @@ export default function AddBook(){
                             <button onClick={() => handleAddBook(b)}><i class="fa-solid fa-plus"></i></button>
                         </div>
                         )
-                    })}
+                    }):<NotFound searchQuery={query}/>}
                 </div>
             </div>
         </div>

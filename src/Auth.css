@@ -1,0 +1,51 @@
+.auth-container{
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 10px;
+    padding: 50px;
+    font-weight: 200;
+}
+.auth-container h1, .auth-container p{
+    text-align: center;
+}
+.auth-container h1{
+    font-family: "Fugaz One", sans-serif;
+}
+.auth-container p{
+    margin-top: 10px;
+}
+.auth-container input:not([type="checkbox"]){
+    padding: 10px;
+    outline: 0;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5px;
+    width: 300px;
+    margin: 10px 0;
+}
+[type="checkbox"]{
+    border: 1px solid rgb(207, 207, 207);
+    margin: 0 10px;
+}
+.auth-container label{
+    font-weight: bold;
+}
+.auth-container input:focus{
+    border: 1px solid rgb(99,117,241);
+}
+.auth-container form{
+    margin-top: 30px;
+}
+.auth-container button{
+    background-color: rgb(99,117,241);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 30px auto 0;
+    display: block;
+}

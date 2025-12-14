@@ -1,0 +1,22 @@
+.admin-profil{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    width: fit-content;
+    line-height: 1.5rem;
+}
+.admin-profil p:last-of-type{
+    color: rgb(180, 180, 180);
+    font-style: italic;
+}
+.admin-profil h3{
+    text-transform: uppercase;
+}

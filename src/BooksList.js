@@ -9,7 +9,7 @@ export default function BooksList(){
             <tr key={book.id} className="book">
                 <td>
                     <Link to={`bookDetails/${book.id}`}>
-                        <img src={book.image} alt="cover-book" />
+                        <img src={book.image} alt="cover-book" loading="lazy"/>
                     </Link>
                 </td>
 

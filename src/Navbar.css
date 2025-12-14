@@ -8,6 +8,9 @@ nav{
     left: 0;
     height: 100vh;
 }
+nav h1{
+    font-family: "Fugaz One", sans-serif;
+}
 nav .link{
     text-decoration: none;
     color: black;

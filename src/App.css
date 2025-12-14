@@ -67,6 +67,19 @@ button, input, textarea{
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   border-radius: 5px;
 }
+.books{
+  background-color: transparent;
+}
+.books tr{
+  background-color: white;
+}
+.books tr:first-child{
+  background-color: rgb(98, 98, 255);
+  border-radius: 5px;
+}
+.books th{
+  color: white;
+}
 .user-manage{
   padding: 30px 20px;
 }
